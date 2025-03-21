@@ -1,0 +1,7 @@
+# Pliki konfiguracyjne zawierające dane wrażliwe
+config.json
+.env
+__pycache__/
+*.pyc
+*.pyo
+
