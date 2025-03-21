@@ -10,24 +10,5 @@
         "missing_api_key": "Brak klucza API w pliku konfiguracyjnym.",
         "openai_not_installed": "Biblioteka OpenAI nie jest zainstalowana. Uruchom aplikację ponownie z opcją --setup",
         "empty_command": "Wprowadź polecenie do wykonania"
-    },
-    "ui_labels": {
-        "input_instruction": "Wprowadź polecenie (np. 'otwórz przeglądarkę', 'uruchom terminal'):",
-        "system_selection": "System operacyjny:",
-        "gpt_response": "Odpowiedź GPT-4:",
-        "command_to_execute": "Polecenie do wykonania:",
-        "execute_button": "Wykonaj polecenie",
-        "clear_button": "Wyczyść",
-        "close_button": "Zamknij",
-        "status_ready": "Gotowy",
-        "status_sending": "Wysyłanie zapytania do GPT-4...",
-        "status_executing": "Wykonywanie: {command}",
-        "status_success": "Polecenie wykonane pomyślnie",
-        "status_error": "Błąd podczas wykonywania polecenia"
-    },
-    "window_titles": {
-        "main": "GPT-4 Aplikacja Komendowa",
-        "result": "Wynik polecenia",
-        "error": "Błąd polecenia"
     }
 }
