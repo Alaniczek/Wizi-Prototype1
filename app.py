@@ -83,13 +83,8 @@ def main():
     
     # Check if running in virtual environment
     if not is_running_in_venv():
-        print("Aplikacja nie jest uruchomiona w środowisku wirtualnym.")
-        print("Uruchom 'python app.py --setup' aby skonfigurować środowisko.")
+        return setup_environment(app_setup)
         
-        response = input("Czy chcesz teraz skonfigurować środowisko? (tak/nie): ").lower()
-        if response in ('tak', 't', 'y', 'yes'):
-            return setup_environment(app_setup)
-        return False
     
     # Load configuration
     config = app_setup.AppSetup.load_config()
