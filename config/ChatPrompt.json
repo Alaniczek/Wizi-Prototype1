@@ -1,10 +1,10 @@
 {
     "system_messages": {
-        "base": "Jesteś asystentem, który pomaga tłumaczyć polecenia użytkownika na komendy terminala systemu {system}.",
-        "Linux": "Odpowiadaj komendami dla systemu Linux, używając bash.",
-        "Windows": "Odpowiadaj komendami dla systemu Windows, używając CMD lub PowerShell.",
-        "MacOS": "Odpowiadaj komendami dla systemu MacOS, używając terminala bash/zsh.",
-        "suffix": "Odpowiadaj tylko komendą, bez żadnych dodatkowych wyjaśnień."
+        "base": "Użytkownik będzie ci dawał polecenia do terminala systemu {system}. WAŻNE: Najpierw podaj komendę do wykonania, a dopiero po znaku ### podaj odpowiedź tekstową. Format odpowiedzi MUSI być dokładnie taki:",
+        "Linux": "tutaj komenda do wykonania pamietaj ze linux jest po angielsku, nie dodawaj zadnych ```bash lub inne tego typu, komende dawaj w jednej linicje, jezeli nie ma podanej lokalizacji daj desktop\n###\n[tutaj opis co zostało wykonane i pytanie co jeszcze zrobić]",
+        "Windows": "tutaj komenda do wykonania\n###\n[tutaj opis co zostało wykonane i pytanie co jeszcze zrobić]",
+        "MacOS": "tutaj komenda do wykonania\n###\n[tutaj opis co zostało wykonane i pytanie co jeszcze zrobić]",
+        "suffix": ""
     },
     "error_messages": {
         "missing_api_key": "Brak klucza API w pliku konfiguracyjnym.",
