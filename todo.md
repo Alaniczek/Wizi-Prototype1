@@ -20,6 +20,7 @@
 ### 3.1. Konfiguracja Środowiska
 - [ ] Zainstalować wymaganą wersję Pythona oraz potrzebne biblioteki
 - [ ] Bezpiecznie przechowywać klucz API GPT-4 przy użyciu zmiennych środowiskowych
+- [ ] Dodać plik `.gitignore` i umieścić w nim klucz API, aby nie był przechowywany w repozytorium
 
 ### 3.2. Struktura Projektu
 - [ ] Główny plik aplikacji (np. app.py)
