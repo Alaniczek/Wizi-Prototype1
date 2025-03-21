@@ -4,6 +4,7 @@ Utility functions for the GPT-4 Command Application
 """
 import os
 import sys
+import json
 import importlib.util
 
 
@@ -89,3 +90,23 @@ def ensure_directory_exists(directory_path):
     except OSError as e:
         handle_error(f"Failed to create directory {directory_path}: {str(e)}")
         return False
+
+
+def load_json(file_path: str) -> dict:
+    """
+    Load and parse a JSON file
+    
+    Args:
+        file_path (str): Path to the JSON file to load
+        
+    Returns:
+        dict: Parsed JSON content, or empty dict if file doesn't exist
+    """
+    try:
+        if os.path.exists(file_path):
+            with open(file_path, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        return {}
+    except Exception as e:
+        handle_error(f"Failed to load JSON file {file_path}: {str(e)}")
+        return {}

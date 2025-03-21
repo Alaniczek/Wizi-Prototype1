@@ -1,93 +1,85 @@
-# GPT Terminal Command Assistant
+# Wizi - GPT Terminal Command Assistant
 
-A Python application that helps translate natural language commands into terminal commands for different operating systems (Linux, Windows, MacOS).
+Inteligentny asystent komend terminalowych wykorzystujący GPT-4 do tłumaczenia poleceń na komendy systemowe.
 
-## Features
+## 🌟 Funkcje
 
-- Natural language to terminal command translation
-- Support for multiple operating systems (Linux, Windows, MacOS)
-- User-friendly GUI interface
-- Command history and output display
-- Automatic virtual environment setup
-- Configuration management
-- Error handling and logging
+- Tłumaczenie poleceń w języku naturalnym na komendy systemowe
+- Wsparcie dla systemów Linux, Windows i MacOS
+- Intuicyjny interfejs graficzny
+- Osobne okna dla komend i odpowiedzi AI
+- Automatyczna konfiguracja środowiska
 
-## Requirements
+## 📋 Wymagania
 
-- Python 3.8 or higher
-- Operating system: Linux, Windows, or MacOS
+- Python 3.8 lub nowszy
+- Dostęp do internetu (dla API OpenAI)
+- System operacyjny: Linux, Windows lub MacOS
 
-## Installation
+## 🚀 Szybka instalacja
 
-1. Clone the repository:
+1. Sklonuj repozytorium:
 ```bash
-git clone https://github.com/yourusername/Wizi.git
+git clone https://github.com/Alaniczek/Wizi.git
 cd Wizi
 ```
 
-2. Run the setup script:
+2. Uruchom aplikację:
 ```bash
-# On Linux/MacOS
-./run.sh
-
-# On Windows
-python app.py --setup
+python3 app.py
 ```
 
-The setup script will:
-- Create a virtual environment
-- Install required dependencies
-- Configure the application
+Aplikacja automatycznie skonfiguruje wszystkie potrzebne zależności przy pierwszym uruchomieniu.
 
-## Configuration
+## ⚙️ Konfiguracja
 
-1. Create a `config.json` in the `config` directory with your OpenAI API key:
+1. Utwórz plik `config.json` w katalogu `config` z następującą zawartością:
 ```json
 {
-    "api_key": "your-api-key-here",
+    "api_key": "twój-klucz-api-openai",
     "model": "gpt-4o-mini",
     "default_system": "Linux"
 }
 ```
 
-2. Optional: Customize other settings in the configuration files under the `config` directory.
-
-## Usage
-
-1. Start the application:
-```bash
-# On Linux/MacOS
-./run.sh
-
-# On Windows
-python app.py
-```
-
-2. Enter your command in natural language in the input field
-3. Click "Submit" or press Enter
-4. The translated terminal command will appear in the output field
-
-## Development
-
-The project uses several development tools:
-- pytest for testing
-- black for code formatting
-- pylint for code analysis
-- mypy for type checking
-
-To set up the development environment:
+2. Upewnij się, że masz zainstalowane wymagane pakiety:
 ```bash
 pip install -r requirements.txt
 ```
 
-## License
+## 🎯 Jak używać
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+1. Uruchom aplikację komendą `python3 app.py`
+2. W polu wprowadzania wpisz polecenie w języku naturalnym (np. "utwórz folder na pulpicie")
+3. Kliknij "Submit" lub wciśnij Enter
+4. Odpowiedź pojawi się w dwóch oknach:
+   - Okno "Chat": Opis wykonanej operacji i pytanie o następne działanie
+   - Okno "Komenda": Dokładna komenda systemowa do wykonania
 
-## Contributing
+## 🔧 Rozwiązywanie problemów
 
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a new Pull Request
+- **Problem z konfiguracją:** Uruchom `python3 app.py --setup`
+- **Brak klucza API:** Upewnij się, że plik `config.json` zawiera prawidłowy klucz API
+- **Błędy zależności:** Uruchom `pip install -r requirements.txt`
+
+## 🤝 Jak przyczynić się do rozwoju
+
+1. Zrób fork repozytorium
+2. Utwórz nową gałąź dla swojej funkcji (`git checkout -b feature/AmazingFeature`)
+3. Zatwierdź zmiany (`git commit -m 'Add some AmazingFeature'`)
+4. Wypchnij do gałęzi (`git push origin feature/AmazingFeature`)
+5. Otwórz Pull Request
+
+## 📝 Licencja
+
+Ten projekt jest objęty licencją MIT - szczegóły w pliku [LICENSE](LICENSE)
+
+## ✨ Autor
+
+Alaniczek - [GitHub](https://github.com/Alaniczek)
+
+## 🙏 Podziękowania
+
+- OpenAI za API GPT-4
+- Społeczność Python za świetne narzędzia
+- Wszystkim kontrybutorem projektu

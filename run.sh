@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Skrypt uruchomieniowy dla aplikacji GPT-4
+# Skrypt uruchomieniowy dla aplikacji Wizi
 
 # Sprawdź czy Python jest zainstalowany
 if ! command -v python3 &> /dev/null; then
@@ -12,12 +12,12 @@ fi
 APP_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 cd "$APP_DIR"
 
-# Sprawdź czy środowisko wirtualne istnieje, jeśli nie, uruchom setup
-if [ ! -d "venv" ]; then
-    echo "Środowisko wirtualne nie istnieje. Uruchamiam konfigurację..."
-    python3 app.py --setup
-else
-    # Aktywuj środowisko wirtualne i uruchom aplikację
-    source venv/bin/activate
-    python app.py
+# Instalacja zależności (jeśli nie są zainstalowane)
+if [ ! -f ".dependencies_installed" ]; then
+    echo "Instalacja wymaganych pakietów..."
+    pip install -r requirements.txt
+    touch .dependencies_installed
 fi
+
+# Uruchom aplikację
+python3 app.py "$@"

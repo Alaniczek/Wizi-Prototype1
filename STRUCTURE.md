@@ -1,99 +1,109 @@
-# Project Structure
+# Wizi - Struktura Projektu
 
-## Directory Layout
+## 🗂️ Układ katalogów
 
 ```
 .
-├── app.py              # Main application entry point
-├── run.sh             # Shell script for easy startup
-├── config/            # Configuration files
-│   ├── ChatPrompt.json       # Chat system messages and prompts
-│   ├── config.json          # Main application configuration
-│   ├── environment.json     # Environment and dependency settings
-│   └── env_setup.py        # Environment setup utilities
-├── src/               # Source code
-│   ├── config/           # Configuration management
-│   │   └── app_setup.py  # Application setup and initialization
-│   ├── gui/             # GUI components
-│   │   ├── gui_part1.py # Main GUI layout and widgets
-│   │   └── gui_part2.py # GUI event handlers and processing
-│   └── utils/           # Utility modules
-│       ├── cache_manager.py # Caching functionality
-│       └── utils.py        # General utility functions
-└── logs/              # Application logs
+├── app.py                 # Główny punkt wejścia aplikacji
+├── run.sh                # Skrypt ułatwiający uruchomienie
+├── requirements.txt      # Zależności projektu
+├── config/              # Pliki konfiguracyjne
+│   ├── ChatPrompt.json   # Szablony wiadomości systemowych
+│   ├── config.json      # Główna konfiguracja (API, model)
+│   └── env_setup.py     # Konfiguracja środowiska
+├── src/                 # Kod źródłowy
+│   ├── config/          # Zarządzanie konfiguracją
+│   │   └── app_setup.py # Inicjalizacja aplikacji
+│   ├── gui/             # Interfejs użytkownika
+│   │   ├── gui_part1.py # Układ i widżety GUI
+│   │   └── gui_part2.py # Obsługa zdarzeń GUI
+│   └── utils/           # Narzędzia pomocnicze
+│       └── utils.py     # Funkcje pomocnicze
+└── logs/               # Logi aplikacji
 ```
 
-## Component Description
+## 🔨 Komponenty
 
-### Main Components
+### 1. Główne komponenty
 
-1. **app.py**
-   - Application entry point
-   - Handles virtual environment checks
-   - Initializes GUI and configuration
+#### `app.py`
+- Punkt wejścia aplikacji
+- Zarządzanie środowiskiem wirtualnym
+- Inicjalizacja GUI i konfiguracji
 
-2. **run.sh**
-   - Shell script for easy application startup
-   - Handles virtual environment activation
-   - Runs setup if needed
+#### `run.sh`
+- Skrypt pomocniczy do uruchamiania
+- Aktywacja środowiska wirtualnego
+- Automatyczna konfiguracja
 
-### Configuration (config/)
+### 2. Konfiguracja (`config/`)
 
-1. **ChatPrompt.json**
-   - System messages for different OS
-   - Error message templates
-   - Chat response formatting
+#### `ChatPrompt.json`
+```json
+{
+    "system_messages": {
+        "base": "Format wiadomości bazowej",
+        "Linux": "Format dla Linux",
+        "Windows": "Format dla Windows",
+        "MacOS": "Format dla MacOS"
+    }
+}
+```
 
-2. **config.json**
-   - API configuration
-   - Model settings
-   - Default system settings
+#### `config.json`
+```json
+{
+    "api_key": "klucz-api",
+    "model": "model-gpt",
+    "default_system": "system-operacyjny"
+}
+```
 
-3. **environment.json**
-   - Required packages
-   - System dependencies
-   - Python version requirements
-   - Logging configuration
+### 3. Kod źródłowy (`src/`)
 
-### Source Code (src/)
+#### GUI (`gui/`)
+- `gui_part1.py`: Layout i komponenty
+- `gui_part2.py`: Logika i obsługa zdarzeń
 
-1. **GUI Module (gui/)**
-   - `gui_part1.py`: Main window layout and widgets
-   - `gui_part2.py`: Event handlers and command processing
+#### Konfiguracja (`config/`)
+- `app_setup.py`: Inicjalizacja aplikacji
 
-2. **Configuration Management (config/)**
-   - `app_setup.py`: Application initialization and setup
+#### Narzędzia (`utils/`)
+- `utils.py`: Funkcje pomocnicze
 
-3. **Utilities (utils/)**
-   - `cache_manager.py`: Caching system
-   - `utils.py`: Helper functions and platform detection
+## 🔄 Przepływ danych
 
-## Data Flow
+1. Input użytkownika → GUI
+2. GUI → Przetwarzanie komend
+3. Przetwarzanie → Zapytanie API
+4. Odpowiedź API → Konwersja komendy
+5. Konwersja → Wyświetlenie wyniku
 
-1. User input → GUI
-2. GUI → Command Processing
-3. Command Processing → API Request
-4. API Response → Command Translation
-5. Command Translation → Output Display
+## 🚀 Proces uruchomienia
 
-## Configuration Flow
+1. Sprawdzenie środowiska
+2. Konfiguracja (jeśli potrzebna)
+3. Wczytanie konfiguracji
+4. Inicjalizacja GUI
 
-1. Application Start
-2. Environment Check
-3. Virtual Environment Setup (if needed)
-4. Configuration Loading
-5. GUI Initialization
+## ⚠️ Obsługa błędów
 
-## Error Handling
+- Błędy konfiguracji środowiska
+- Błędy komunikacji z API
+- Błędy przetwarzania komend
+- Błędy GUI
 
-- Environment setup errors
-- API communication errors
-- Command processing errors
-- Configuration errors
+## 🧪 Rozwój
 
-## Development Tools
+### Narzędzia
+- pytest do testów
+- black do formatowania
+- pylint do analizy
+- mypy do sprawdzania typów
 
-- pytest for testing
-- black for code formatting
-- pylint for code analysis
-- mypy for type checking
+### Dodawanie nowych funkcji
+1. Utwórz nową gałąź
+2. Dodaj testy
+3. Zaimplementuj funkcję
+4. Zaktualizuj dokumentację
+5. Utwórz Pull Request
